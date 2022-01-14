@@ -1,0 +1,164 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="_css/estilo.css">
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css " rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <!--Construção do efeito ACCORDION (ACORDEON) do JQUERY UI-->
+  <script>
+    $(function () {
+      $("#acordeon").accordion({
+        active: false,
+        collapsible: true
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <form name="form" id="form" onsubmit="return validarTudo();">
+    <table>
+
+      <th class="contador">Cronômetro
+        <p id="cronometro" disabled></p>
+      </th>
+      <th class="titulo">Cadastro de Assinantes</th>
+      <tr>
+        <td><label for="nome">Nome:</label></td>
+        <td><input type="text" name="nome" id="nome" minlength="10" maxlength="80" autocomplete="off"
+            placeholder="Insira o seu nome"></td>
+      </tr>
+
+      <tr>
+        <td><label for="cpf">CPF:</label></td>
+        <td><input type="text" name="cpf" id="cpf" maxlength="14" autocomplete="off" placeholder="Insira o seu CPF">
+        </td>
+      </tr>
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="text" name="email" id="email" autocomplete="off" placeholder="xxxxxxx@email.com"></td>
+      </tr>
+
+      <tr>
+        <td><label for="tel">Celular:</label></td>
+        <td> <input type="text" name="cel" id="cel" autocomplete="off" placeholder="(00) 00000-0000" maxlength="15">
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="nascimento">Data Nascimento</label></td>
+        <td><input type="date" name="nascimento" id="nascimento" autocomplete="off"></td>
+      </tr>
+
+      <tr>
+        <td><label for="salario">Salário:</label></td>
+        <td>R$: <input type="text" name="salario" id="salario" autocomplete="off" style="text-align: right;"
+            placeholder="00,00" maxlength="18"></td>
+      </tr>
+
+      <tr>
+        <td><label for="sexo">Sexo:</label></td>
+        <td><input type="radio" name="sexo" id="sexo" value="M">Masculino
+          <input type="radio" name="sexo" id="sexo" value="F">Feminino</td>
+      </tr>
+
+      <tr>
+        <td><label for="futebol">Time de Futebol:</label></td>
+        <td><select id="team_id" name="times">
+            <option id="time" value="0">Selecione</option>
+            <option id="time" value="1">Corinthians</option>
+            <option id="time" value="1">Palmeiras</option>
+            <option id="time" value="1">Santos</option>
+            <option id="time" value="1">São Paulo</option>
+          </select></td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="planos">Planos:</label>
+        </td>
+        <td>
+          <input type="radio" name="planos" id="plano" value="1" onclick="totaliza();">Mensal - R$ 85,00 <br>
+          <input type="radio" name="planos" id="plano" value="1" onclick="totaliza();">Quadrimestral - R$ 300,00 <br>
+          <input type="radio" name="planos" id="plano" value="1" onclick="totaliza();">Anual - R$ 600,00
+        </td>
+      </tr>
+
+      <tr>
+        <td>Canais Incluídos</td>
+        <td>
+          <div id="acordeon">
+            <h3>Plano Mensal</h3>
+            <div>
+              <ul>
+                <li>ESPN</li>
+                <li>Fox Sports</li>
+                <li>Sport TV</li>
+              </ul>
+            </div>
+            <h3>Plano Quadrimestral</h3>
+            <div>
+              <ul>
+                <li>ESPN</li>
+                <li>Fox Sports 2</li>
+                <li>Sport TV 2</li>
+              </ul>
+            </div>
+            <h3>Plano Anual</h3>
+            <div>
+              <ul>
+                <li>ESPN 2</li>
+                <li>Fox Sports 2</li>
+                <li>Sport TV 2 e 3</li>
+              </ul>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="premiere">Premiere:</label>
+        </td>
+        <td>
+          <input type="radio" name="premiere" id="premiere" value="E" onclick="totaliza();">Econômico - 12 x R$ 60,00
+          <br>
+          <input type="radio" name="premiere" id="premiere" value="C" onclick="totaliza();">Controle - Mensal R$ 80,00
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="total">Total (mensal):</label>
+        </td>
+        <td>
+          <input type="text" name="total" id="total" readonly style="text-align: right;">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="login">Para assinar, <br> informe Login e Senha:</label>
+        </td>
+        <td>
+          <input type="text" name="login" id="login" autocomplete="off" placeholder="Login (teste JSON: Usuario)"
+           size=22> <br>
+          <input type="password" name="senha" id="senha" autocomplete="off" placeholder="Senha (teste JSON: Abc$123)"
+           size=22>
+        </td>
+      </tr>
+
+      <tr>
+        <th><button type="submit">Validar Formulário</button></th>
+        <th><input type="button" name="bntAssin" id="bntAssin" value="Assinar" disabled
+            onclick="alert('Parabéns! Assinatura Realizada');"></th>
+      </tr>
+    </table>
+  </form>
+  <script src="_javascript/valida_form.js"></script>
+</body>
+
+</html>

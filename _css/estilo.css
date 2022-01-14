@@ -1,0 +1,29 @@
+#acordeon{font-size: 14px; width:200px;}
+label, tr {font-size: 14px; font-family: arial;}
+button, input[type="button"] {font-size: 20px; font-family: arial;}
+table {background-color: rgb(231, 231, 231);}
+
+.titulo{
+    margin-top: 10px;
+}
+table{
+    margin: auto;
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 5px;
+    
+}
+input{
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 5px;
+    
+}
+
+.contador{
+    width: 100px;
+    height: 20px;
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    
+}
